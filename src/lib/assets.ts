@@ -1,10 +1,4 @@
-import INConfig from "config.ts";
 import Cookies from "js-cookie";
-
-export const ASSET_URL =
-  INConfig.server && INConfig.server.assets === "external"
-    ? "https://raw.githubusercontent.com/UseInterstellar/Interstellar-Assets/main"
-    : "/assets";
 
 export type Asset = {
   name: string;
@@ -23,7 +17,7 @@ export function addAsset(name: string, link: string, type: string) {
   currentAssets.push({
     name: name,
     link: link,
-    image: "/icons/custom.webp",
+    image: "/icons/Custom.webp",
     custom: true,
   });
   Cookies.set(`asset.${type}`, JSON.stringify(currentAssets), {
